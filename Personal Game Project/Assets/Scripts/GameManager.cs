@@ -8,15 +8,18 @@ public class GameManager : MonoBehaviour
 {
     public int nuggets;
     public TextMeshProUGUI NuggetAmount;
+    public TextMeshProUGUI PlayerHealth;
     public bool gameActive;
+    private damageable damageable;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         UpdateNuggets(0);
         gameActive = true;
+        damageable = GameObject.Find("Player").GetComponent<damageable>();
     }
 
-    public void UpdateNuggets(int nuggetsToAdd) 
+    public void UpdateNuggets(int nuggetsToAdd)
     {
         nuggets += nuggetsToAdd;
         NuggetAmount.text = "Nuggets: " + nuggets + "/25";
@@ -24,5 +27,9 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("You can now get out!");
         }
+    }
+    public void FixedUpdate()
+    {
+        PlayerHealth.text = "Life: " + damageable.Health + "/3";
     }
 }
