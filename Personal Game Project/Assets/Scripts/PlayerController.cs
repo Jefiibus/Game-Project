@@ -9,7 +9,9 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed = 5f;
     public float jumpForce = 10f;
     private Rigidbody2D rb;
-    
+    private CapsuleCollider2D cc;
+    private damageable damageable;
+
     Vector2 moveInput;
     TouchingDirections touchingDirections;
 
@@ -50,7 +52,9 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        cc = GetComponent<CapsuleCollider2D>();
         touchingDirections = GetComponent<TouchingDirections>();
+        damageable = GetComponent<damageable>();
     }
 
 
@@ -86,6 +90,13 @@ public class PlayerController : MonoBehaviour
         if (context.started && touchingDirections.IsGrounded)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+      if (col.collider.CompareTag("Enemy"))
+        {
+            damageable.Hit(1);
         }
     }
 }

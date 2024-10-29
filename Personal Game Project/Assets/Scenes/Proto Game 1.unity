@@ -1369,6 +1369,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5931251162359715957, guid: 1584372ca16aa7a4b9ea31a3eeb1f8d3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.014
+      objectReference: {fileID: 0}
+    - target: {fileID: 5931251162359715957, guid: 1584372ca16aa7a4b9ea31a3eeb1f8d3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.089
+      objectReference: {fileID: 0}
     - target: {fileID: 8291358518948094577, guid: 1584372ca16aa7a4b9ea31a3eeb1f8d3, type: 3}
       propertyPath: m_Name
       value: Slime Enemy (1)
@@ -2235,6 +2243,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5931251162359715957, guid: 1584372ca16aa7a4b9ea31a3eeb1f8d3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.019
+      objectReference: {fileID: 0}
+    - target: {fileID: 5931251162359715957, guid: 1584372ca16aa7a4b9ea31a3eeb1f8d3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.09
+      objectReference: {fileID: 0}
     - target: {fileID: 8291358518948094577, guid: 1584372ca16aa7a4b9ea31a3eeb1f8d3, type: 3}
       propertyPath: m_Name
       value: Slime Enemy (1)
@@ -2917,6 +2933,14 @@ PrefabInstance:
     - target: {fileID: 1858242849838494223, guid: 1584372ca16aa7a4b9ea31a3eeb1f8d3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5931251162359715957, guid: 1584372ca16aa7a4b9ea31a3eeb1f8d3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 5931251162359715957, guid: 1584372ca16aa7a4b9ea31a3eeb1f8d3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.094
       objectReference: {fileID: 0}
     - target: {fileID: 8291358518948094577, guid: 1584372ca16aa7a4b9ea31a3eeb1f8d3, type: 3}
       propertyPath: m_Name
@@ -43614,14 +43638,6 @@ PrefabInstance:
     - target: {fileID: 1858242849838494223, guid: 1584372ca16aa7a4b9ea31a3eeb1f8d3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4501378858676956524, guid: 1584372ca16aa7a4b9ea31a3eeb1f8d3, type: 3}
-      propertyPath: m_FlipX
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4529057085856107024, guid: 1584372ca16aa7a4b9ea31a3eeb1f8d3, type: 3}
-      propertyPath: castFilter.useLayerMask
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8291358518948094577, guid: 1584372ca16aa7a4b9ea31a3eeb1f8d3, type: 3}
       propertyPath: m_Name
