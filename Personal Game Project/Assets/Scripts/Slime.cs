@@ -12,12 +12,14 @@ public class Slime : MonoBehaviour
 
     private WalkableDirection _walkDirection;
     private Vector2 walkDirectionVector = Vector2.right;
-
+    GameManager gameManager;
     public WalkableDirection WalkDirection
     {
+
         get { return _walkDirection; }
         set
         {
+            
             if (_walkDirection != value)
             {
                 gameObject.transform.localScale = new Vector2(gameObject.transform.localScale.x * -1, gameObject.transform.localScale.y);
@@ -40,6 +42,7 @@ public class Slime : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         touchingDirections = GetComponent<TouchingDirections>();
+        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
     }
 
     private void FixedUpdate()
@@ -48,8 +51,10 @@ public class Slime : MonoBehaviour
         {
             FlipDirection();
         }
+        if (gameManager.gameActive)
+        {
             rb.velocity = new Vector2(walk * walkDirectionVector.x, rb.velocity.y);
-        
+        }
     }
 
     private void FlipDirection()

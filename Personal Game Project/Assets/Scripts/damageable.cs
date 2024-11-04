@@ -50,7 +50,6 @@ public class damageable : MonoBehaviour
         set 
         {
             _isAlive = value;
-            Debug.Log("IsAlive set " + value);
         }
     }
     private void Awake()

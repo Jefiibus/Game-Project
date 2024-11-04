@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private CapsuleCollider2D cc;
     private damageable damageable;
-
+    GameManager gameManager;
     Vector2 moveInput;
     TouchingDirections touchingDirections;
 
@@ -55,6 +55,7 @@ public class PlayerController : MonoBehaviour
         cc = GetComponent<CapsuleCollider2D>();
         touchingDirections = GetComponent<TouchingDirections>();
         damageable = GetComponent<damageable>();
+        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
     }
 
 
@@ -65,14 +66,17 @@ public class PlayerController : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        // Gets player input and checks if the player is moving
-        moveInput = context.ReadValue<Vector2>();
-        IsMoving = moveInput != Vector2.zero;
-        SetFacingDirection(moveInput);
-
+        if (gameManager.gameActive)
+        {
+            // Gets player input and checks if the player is moving
+            moveInput = context.ReadValue<Vector2>();
+            IsMoving = moveInput != Vector2.zero;
+            SetFacingDirection(moveInput);
+        }
     }
     private void SetFacingDirection(Vector2 moveInput)
     {
+
         if (moveInput.x > 0 && !IsFacingRight)
         {
             //right
@@ -87,9 +91,12 @@ public class PlayerController : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        if (context.started && touchingDirections.IsGrounded)
+        if (gameManager.gameActive)
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            if (context.started && touchingDirections.IsGrounded)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            }
         }
     }
     private void OnCollisionEnter2D(Collision2D col)

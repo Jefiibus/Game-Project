@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SocialPlatforms.Impl;
+using JetBrains.Annotations;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,12 +14,26 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI PlayerHealth;
     public bool gameActive;
     private damageable damageable;
+    public TextMeshProUGUI gameOverText;
+    public Button Restartbutton;
     // Start is called before the first frame update
     void Awake()
     {
         UpdateNuggets(0);
         gameActive = true;
         damageable = GameObject.Find("Player").GetComponent<damageable>();
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void GameOver() 
+    {
+        gameActive = false;
+        gameOverText.gameObject.SetActive(true);
+        Restartbutton.gameObject.SetActive(true);
     }
 
     public void UpdateNuggets(int nuggetsToAdd)
@@ -30,6 +47,11 @@ public class GameManager : MonoBehaviour
     }
     public void FixedUpdate()
     {
+        if (damageable.IsAlive == false) 
+        {
+            GameOver();
+        }
+            
         PlayerHealth.text = "Life: " + damageable.Health + "/3";
     }
 }
