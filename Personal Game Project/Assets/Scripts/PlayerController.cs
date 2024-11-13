@@ -61,7 +61,10 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(moveInput.x * CurrentMoveSpeed, rb.velocity.y);
+        if (gameManager.gameActive)
+        {
+            rb.velocity = new Vector2(moveInput.x * CurrentMoveSpeed, rb.velocity.y);
+        }
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -97,13 +100,6 @@ public class PlayerController : MonoBehaviour
             {
                 rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             }
-        }
-    }
-    private void OnCollisionEnter2D(Collision2D col)
-    {
-      if (col.collider.CompareTag("Enemy"))
-        {
-            damageable.Hit(1);
         }
     }
 }

@@ -190,7 +190,7 @@ MonoBehaviour:
   m_LockStageInInspector: 
   m_StreamingVersion: 20170927
   m_Priority: 10
-  m_StandbyUpdate: 2
+  m_StandbyUpdate: 1
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 1568351735}
   m_Lens:
@@ -2379,13 +2379,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5931251162359715957, guid: 1584372ca16aa7a4b9ea31a3eeb1f8d3, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.019
-      objectReference: {fileID: 0}
-    - target: {fileID: 5931251162359715957, guid: 1584372ca16aa7a4b9ea31a3eeb1f8d3, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.09
+    - target: {fileID: 6880712615294233317, guid: 1584372ca16aa7a4b9ea31a3eeb1f8d3, type: 3}
+      propertyPath: m_LayerOverridePriority
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8291358518948094577, guid: 1584372ca16aa7a4b9ea31a3eeb1f8d3, type: 3}
       propertyPath: m_Name
@@ -2409,12 +2405,12 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 253335212}
     m_Modifications:
-    - target: {fileID: 3775296941476652486, guid: 4d791c5270af61b4484c4df158307f40, type: 3}
-      propertyPath: m_Name
-      value: Player
+    - target: {fileID: 595504562267026397, guid: 4d791c5270af61b4484c4df158307f40, type: 3}
+      propertyPath: m_SleepingMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3775296941476652486, guid: 4d791c5270af61b4484c4df158307f40, type: 3}
-      propertyPath: m_TagString
+      propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 5071548856754529662, guid: 4d791c5270af61b4484c4df158307f40, type: 3}
@@ -2460,6 +2456,14 @@ PrefabInstance:
     - target: {fileID: 7001134666172383030, guid: 4d791c5270af61b4484c4df158307f40, type: 3}
       propertyPath: castFilter.useLayerMask
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8858045845330256508, guid: 4d791c5270af61b4484c4df158307f40, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8858045845330256508, guid: 4d791c5270af61b4484c4df158307f40, type: 3}
+      propertyPath: m_LayerOverridePriority
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2628,7 +2632,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ad7f60e8b7a6d0439fa4308e6754783, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nuggets: 24
+  nuggets: 0
   NuggetAmount: {fileID: 566733492}
   PlayerHealth: {fileID: 1785911508}
   gameActive: 0
@@ -54817,7 +54821,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1858242849838494223, guid: 1584372ca16aa7a4b9ea31a3eeb1f8d3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.16
+      value: -1.265
       objectReference: {fileID: 0}
     - target: {fileID: 1858242849838494223, guid: 1584372ca16aa7a4b9ea31a3eeb1f8d3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -54849,6 +54853,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1858242849838494223, guid: 1584372ca16aa7a4b9ea31a3eeb1f8d3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6880712615294233317, guid: 1584372ca16aa7a4b9ea31a3eeb1f8d3, type: 3}
+      propertyPath: m_LayerOverridePriority
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8291358518948094577, guid: 1584372ca16aa7a4b9ea31a3eeb1f8d3, type: 3}

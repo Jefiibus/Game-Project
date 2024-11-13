@@ -7,6 +7,7 @@ TagManager:
   - Ground
   - Nugget
   - Enemy
+  - EnemyHitbox
   layers:
   - Default
   - TransparentFX
