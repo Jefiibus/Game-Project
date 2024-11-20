@@ -18,7 +18,7 @@ public class damageable : MonoBehaviour
         }
     }
 
-    private int _health = 3;
+    public int _health = 3;
 
     public int Health 
     {
