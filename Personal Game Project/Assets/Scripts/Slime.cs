@@ -14,6 +14,7 @@ public class Slime : MonoBehaviour
     private WalkableDirection _walkDirection;
     private Vector2 walkDirectionVector = Vector2.right;
     GameManager gameManager;
+    private Animator animator;
     public WalkableDirection WalkDirection
     {
 
@@ -44,6 +45,7 @@ public class Slime : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         touchingDirections = GetComponent<TouchingDirections>();
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+        animator = GetComponent<Animator>();
     }
 
     private void FixedUpdate()
@@ -55,6 +57,10 @@ public class Slime : MonoBehaviour
         if (gameManager.gameActive)
         {
             rb.velocity = new Vector2(walk * walkDirectionVector.x, rb.velocity.y);
+        }
+        else
+        {
+            animator.enabled = false;
         }
     }
 

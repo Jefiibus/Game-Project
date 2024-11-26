@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     GameManager gameManager;
     Vector2 moveInput;
     TouchingDirections touchingDirections;
+    private Animator anim;
 
     public float CurrentMoveSpeed { get 
         {
@@ -56,6 +57,7 @@ public class PlayerController : MonoBehaviour
         touchingDirections = GetComponent<TouchingDirections>();
         damageable = GetComponent<damageable>();
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+        anim = GetComponent<Animator>();
     }
 
 
@@ -64,7 +66,13 @@ public class PlayerController : MonoBehaviour
         if (gameManager.gameActive)
         {
             rb.velocity = new Vector2(moveInput.x * CurrentMoveSpeed, rb.velocity.y);
+            anim.SetBool("Move", moveInput.x != 0);
         }
+        else
+        {
+            anim.enabled = false;
+        }
+        
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -75,6 +83,7 @@ public class PlayerController : MonoBehaviour
             moveInput = context.ReadValue<Vector2>();
             IsMoving = moveInput != Vector2.zero;
             SetFacingDirection(moveInput);
+            
         }
     }
     private void SetFacingDirection(Vector2 moveInput)

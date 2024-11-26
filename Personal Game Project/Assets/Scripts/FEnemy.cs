@@ -13,11 +13,13 @@ public class FEnemy : MonoBehaviour
     Transform nextWayPoint;
     int waypointNum = 0;
     public float waypointReached = 0.1f;
+    private Animator animator;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+        animator = GetComponent<Animator>();
     }
 
     private void Start()
@@ -46,6 +48,7 @@ public class FEnemy : MonoBehaviour
         else
         {
             fSpeed = 0;
+            animator.enabled = false;
             rb.velocity = directionToWaypoint * fSpeed;
         }
         // see if need to switch waypoints

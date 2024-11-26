@@ -114,6 +114,7 @@ GameObject:
   - component: {fileID: 7114148707417485000}
   - component: {fileID: 5397839245817205414}
   - component: {fileID: 5138830252145993455}
+  - component: {fileID: 1723422790525213276}
   m_Layer: 8
   m_Name: Bat Enemy
   m_TagString: FEnemy
@@ -129,7 +130,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5347808486641399172}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.82, y: 1.9, z: 0.47909558}
   m_LocalScale: {x: 2.2614462, y: 2.2614462, z: 2.2614462}
   m_ConstrainProportionsScale: 1
@@ -314,3 +315,24 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   waypointReached: 0.1
+--- !u!95 &1723422790525213276
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5347808486641399172}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 95b79e41e6b8f7b4995a30d3b82fd593, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
