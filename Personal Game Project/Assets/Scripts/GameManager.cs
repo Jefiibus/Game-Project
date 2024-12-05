@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     private damageable damageable;
     public TextMeshProUGUI gameOverText;
     public Button Restartbutton;
+    public TextMeshProUGUI GetOutNotif;
     // Start is called before the first frame update
     void Awake()
     {
@@ -36,13 +37,20 @@ public class GameManager : MonoBehaviour
         Restartbutton.gameObject.SetActive(true);
     }
 
+    private IEnumerator Notif()
+    {
+        yield return new WaitForSeconds(4);
+        GetOutNotif.gameObject.SetActive(false);
+    }
+
     public void UpdateNuggets(int nuggetsToAdd)
     {
         nuggets += nuggetsToAdd;
         NuggetAmount.text = "Nuggets: " + nuggets + "/25";
         if (nuggets == 25)
         {
-            Debug.Log("You can now get out!");
+            GetOutNotif.gameObject.SetActive(true);
+            StartCoroutine(Notif());
         }
     }
     public void FixedUpdate()
