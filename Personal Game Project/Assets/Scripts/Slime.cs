@@ -56,12 +56,14 @@ public class Slime : MonoBehaviour
         }
         if (gameManager.gameActive)
         {
+            animator.enabled = true;
             rb.velocity = new Vector2(walk * walkDirectionVector.x, rb.velocity.y);
         }
-        else
+        if (!gameManager.gameActive)
         {
             animator.enabled = false;
         }
+
     }
 
     private void FlipDirection()

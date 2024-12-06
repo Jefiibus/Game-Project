@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - EnemyHitbox
   - FEnemy
+  - Screen
   layers:
   - Default
   - TransparentFX

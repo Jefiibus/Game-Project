@@ -8,9 +8,13 @@ public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 5f;
     public float jumpForce = 10f;
+    public AudioClip jumpcl;
+
     private Rigidbody2D rb;
     private CapsuleCollider2D cc;
     private damageable damageable;
+    private AudioSource playerAudio;
+
     GameManager gameManager;
     Vector2 moveInput;
     TouchingDirections touchingDirections;
@@ -58,6 +62,7 @@ public class PlayerController : MonoBehaviour
         damageable = GetComponent<damageable>();
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
         anim = GetComponent<Animator>();
+        playerAudio = GetComponent<AudioSource>();
     }
 
 
@@ -65,6 +70,7 @@ public class PlayerController : MonoBehaviour
     {
         if (gameManager.gameActive)
         {
+            anim.enabled = true;
             rb.velocity = new Vector2(moveInput.x * CurrentMoveSpeed, rb.velocity.y);
             anim.SetBool("Move", moveInput.x != 0);
         }
@@ -108,6 +114,7 @@ public class PlayerController : MonoBehaviour
             if (context.started && touchingDirections.IsGrounded)
             {
                 rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+                playerAudio.PlayOneShot(jumpcl,0.3f);
             }
         }
     }

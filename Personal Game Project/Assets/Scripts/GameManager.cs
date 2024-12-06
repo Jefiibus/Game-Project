@@ -17,14 +17,29 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI gameOverText;
     public Button Restartbutton;
     public TextMeshProUGUI GetOutNotif;
+    public AudioClip Nug;
+    private AudioSource gameAudio;
+    public GameObject TitleScreen;
+    private GameObject screen;
+    public Button startbutton;
     // Start is called before the first frame update
     void Awake()
     {
-        UpdateNuggets(0);
-        gameActive = true;
+        gameAudio = GetComponent<AudioSource>();
+        NuggetAmount.text = "Nuggets: 0/25";
+        gameActive = false;
         damageable = GameObject.Find("Player").GetComponent<damageable>();
+        screen = GameObject.Find("Square");
     }
 
+    public void StartGame()
+    {
+        gameActive = true;
+        NuggetAmount.gameObject.SetActive(true);
+        PlayerHealth.gameObject.SetActive(true);
+        TitleScreen.gameObject.SetActive(false);
+        screen.gameObject.SetActive(false);
+    }
     public void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -47,6 +62,7 @@ public class GameManager : MonoBehaviour
     {
         nuggets += nuggetsToAdd;
         NuggetAmount.text = "Nuggets: " + nuggets + "/25";
+        gameAudio.PlayOneShot(Nug, 0.3f);
         if (nuggets == 25)
         {
             GetOutNotif.gameObject.SetActive(true);
@@ -59,7 +75,6 @@ public class GameManager : MonoBehaviour
         {
             GameOver();
         }
-            
-        PlayerHealth.text = "Life: " + damageable.Health + "/3";
+            PlayerHealth.text = "Life: " + damageable.Health + "/3";
     }
 }

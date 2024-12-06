@@ -43,6 +43,8 @@ public class FEnemy : MonoBehaviour
 
         if (gameManager.gameActive)
         {
+            animator.enabled = true;
+            fSpeed = 3;
             rb.velocity = directionToWaypoint * fSpeed;
         }
         else
@@ -50,6 +52,7 @@ public class FEnemy : MonoBehaviour
             fSpeed = 0;
             animator.enabled = false;
             rb.velocity = directionToWaypoint * fSpeed;
+            return;
         }
         // see if need to switch waypoints
         if (distance < waypointReached)
